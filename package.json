@@ -42,7 +42,7 @@
     "eslint-plugin-react": "^7.27.1",
     "group-css-media-queries-loader": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.4.0",
+    "jest": "^29.5.0",
     "mini-css-extract-plugin": "^2.4.5",
     "prettier": "^2.5.0",
     "sass": "^1.43.5",
