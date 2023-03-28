@@ -1,34 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Container } from '@/shared/ui';
+import clsx from 'clsx';
 
-export const RootPage = () => {
+export const RootPage: FC = () => {
+  console.log(clsx('foo', true && 'foo-bar'));
+
   return (
     <div>
-      <Container>
-        <div
-          style={{
-            padding: 30,
-            display: 'flex',
-            justifyContent: 'space-around',
-          }}
-        >
-          <h1
-            aria-label="Page title"
-            style={{ fontSize: 28, lineHeight: '40px', color: 'darkcyan' }}
-          >
-            Hello World! :)
-          </h1>
-          <button
-            aria-label="button"
-            onClick={() => {
-              window.location.href =
-                'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
-            }}
-          >
-            Click me
-          </button>
-        </div>
-      </Container>
+      <Container>content</Container>
     </div>
   );
 };
