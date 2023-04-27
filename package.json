@@ -23,7 +23,7 @@
     "@babel/plugin-proposal-class-properties": "7.16.0",
     "@babel/preset-env": "7.16.4",
     "@babel/preset-react": "7.16.0",
-    "@babel/preset-typescript": "7.16.0",
+    "@babel/preset-typescript": "7.21.4",
     "@testing-library/react": "14.0.0",
     "@types/jest": "29.5.0",
     "@types/react": "18.0.30",
