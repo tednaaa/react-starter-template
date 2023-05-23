@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Container } from '@/shared/ui';
-import clsx from 'clsx';
+
+import { Container } from '@/shared/ui/container';
 
 export const RootPage: FC = () => {
   return (
