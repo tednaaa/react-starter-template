@@ -1,19 +1,16 @@
-# Init project
+# Instructions
 
 > Install packages
 
 ```
-npm install
+npm ci
 ```
 
-> Copy .env.example to .env & fill credentials
+> Create .env from .env.example and fill credentials
 
 ```
 cp .env.example .env
 ```
-
-- `PORT`: port for local development
-- `API_URL`: api url for requesting queries to backend
 
 > Run local severr for development
 
