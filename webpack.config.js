@@ -1,10 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
-const parsedDotenvConfig = require('dotenv').config().parsed;
+require('dotenv').config();
 
 const { PORT, NODE_ENV } = process.env;
 
@@ -15,10 +15,10 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'app', 'index.tsx'),
   output: {
     filename: 'js/[name].[contenthash].js',
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'dist'),
     publicPath: '/',
   },
-  devtool: isDevelopment ? 'source-map' : false,
+  devtool: isDevelopment ? 'inline-source-map' : false,
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
@@ -33,6 +33,10 @@ module.exports = {
     },
     minimizer: ['...', new CssMinimizerPlugin()],
   },
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
@@ -40,17 +44,16 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': `(${JSON.stringify(parsedDotenvConfig)})`,
-    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
+      favicon: path.join(__dirname, 'public', 'favicon.ico'),
     }),
     new MiniCssExtractPlugin({
       filename: isDevelopment
         ? 'css/[name].css'
         : 'css/[name].[contenthash].css',
     }),
+    new Dotenv({ systemvars: true }),
   ],
   module: {
     rules: [
