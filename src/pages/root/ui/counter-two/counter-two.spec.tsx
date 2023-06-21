@@ -32,7 +32,7 @@ describe('CounterTwo', () => {
     await user.click(incrementButton);
     await user.click(decrementButton);
 
-    expect(spyHandleIncrement).toBeCalled();
-    expect(spyHandleDecrement).toBeCalled();
+    expect(spyHandleIncrement).toHaveBeenCalled();
+    expect(spyHandleDecrement).toHaveBeenCalled();
   });
 });

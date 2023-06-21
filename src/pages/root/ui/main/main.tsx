@@ -17,7 +17,7 @@ export const Main = () => {
             id="name"
             placeholder="write your name"
             value="Andranik"
-            onChange={() => {}}
+            onChange={() => console.log('smth')}
           />
         </div>
         <div>

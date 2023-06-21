@@ -1,5 +1,5 @@
 import React from 'react';
-import { logRoles, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Skills } from './skills';
 
 describe('Skills', () => {

@@ -5,7 +5,7 @@ import { Counter } from './counter';
 
 describe('Counter', () => {
   it('should render correctly', () => {
-    const screen = render(<Counter />);
+    render(<Counter />);
 
     const countElement = screen.getByRole('heading');
     const incrementButton = screen.getByRole('button', { name: 'increment' });

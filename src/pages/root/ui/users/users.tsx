@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 export const Users = () => {
   const [users, setUsers] = useState<string[]>([]);
-  const [error, setError] = useState<string>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     axios

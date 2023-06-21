@@ -1,2 +1,1 @@
-export * from '@testing-library/react';
-export { customRender as render } from './render';
+export { renderWithProviders } from './render';

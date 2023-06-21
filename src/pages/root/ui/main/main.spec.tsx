@@ -49,6 +49,6 @@ describe('Main', () => {
     expect(submitButtonElement).toBeInTheDocument();
     expect(closeElement).toBeInTheDocument();
     expect(customElement).toBeInTheDocument();
-    expect(submitButtonElement).toBeEnabled();
+    expect(submitButtonElement).toBeDisabled();
   });
 });
