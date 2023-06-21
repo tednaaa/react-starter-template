@@ -1,5 +1,0 @@
-{
-  "*.{ts,tsx}": "npm run lint",
-  "*.spec.{ts,tsx}": "npm test",
-  "*": "npm run format:check"
-}
