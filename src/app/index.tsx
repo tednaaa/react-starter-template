@@ -6,7 +6,7 @@ import { App } from './app';
 
 import './scss/index.scss';
 
-const container = document.getElementById('app');
+const container = document.querySelector('#app') as HTMLElement;
 const root = createRoot(container);
 
 root.render(<App />);

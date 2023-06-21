@@ -1,11 +1,40 @@
 {
-  "extends": ["alloy", "alloy/react", "alloy/typescript"],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "jest",
+    "jest-dom",
+    "testing-library"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
+  },
+  "ignorePatterns": ["*.js"],
   "settings": {
     "react": {
       "version": "detect"
     }
   },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
   "env": {
+    "browser": true,
+    "es2021": true,
     "jest": true
   }
 }

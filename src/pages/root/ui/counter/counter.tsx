@@ -18,7 +18,12 @@ export const Counter = () => {
         type="number"
         name="amount"
         value={count}
-        onChange={(event) => setCount(parseInt(event.currentTarget.value, 10))}
+        onChange={(event) => {
+          const { value } = event.currentTarget;
+
+          if (value) setCount(parseInt(value, 10));
+          else setCount(0);
+        }}
       />
     </div>
   );

@@ -5,10 +5,10 @@ import { server } from '@/shared/api/mocks';
 import { rest } from 'msw';
 
 describe('Users', () => {
-  it('should render correctly', () => {
+  it('should render correctly', async () => {
     render(<Users />);
 
-    const heading = screen.getByRole('heading', { name: 'Users' });
+    const heading = await screen.findByRole('heading', { name: 'Users' });
 
     expect(heading).toBeInTheDocument();
   });
