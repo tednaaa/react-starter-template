@@ -1,11 +1,7 @@
 import React, { FC } from 'react';
 
-import { Container } from '@/shared/ui/container';
+import { Users } from './users/users';
 
 export const RootPage: FC = () => {
-  return (
-    <div>
-      <Container>content</Container>
-    </div>
-  );
+  return <Users />;
 };
