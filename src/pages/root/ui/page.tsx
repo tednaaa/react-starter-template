@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
-import { CounterTwo } from './counter-two/counter-two';
+import { Counter } from './counter/counter';
 
 export const RootPage: FC = () => {
-  return <CounterTwo count={0} />;
+  return <Counter />;
 };
