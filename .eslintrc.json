@@ -8,12 +8,12 @@
   ],
   "extends": [
     "eslint:recommended",
-    "prettier",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jest/recommended",
     "plugin:jest-dom/recommended",
-    "plugin:testing-library/react"
+    "plugin:testing-library/react",
+    "prettier"
   ],
   "rules": {
     "indent": ["error", 2],
