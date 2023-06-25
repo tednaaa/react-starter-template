@@ -12,10 +12,10 @@ npm ci
 cp .env.example .env
 ```
 
-> Run local severr for development
+> Run development server and start coding
 
 ```
-npm run dev
+npm start
 ```
 
 > Build your project and minify for production
