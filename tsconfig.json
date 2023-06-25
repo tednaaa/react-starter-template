@@ -1,24 +1,37 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
     "sourceMap": true,
-    "target": "es5",
-    "module": "commonjs",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "jsx": "react",
+    "declaration": false,
     "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./src",
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
-    "types": ["node", "@testing-library/jest-dom"]
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true
   },
-  "exclude": ["node_modules"]
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ],
+  "compileOnSave": false,
+  "exclude": ["node_modules", "tmp"]
 }
