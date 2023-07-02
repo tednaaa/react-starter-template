@@ -1,0 +1,12 @@
+node_modules
+
+.husky
+.github
+.env
+.env.example
+
+.DS_Store
+
+cypress
+coverage
+dist
