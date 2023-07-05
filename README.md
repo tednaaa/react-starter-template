@@ -7,6 +7,7 @@ npm ci
 ```
 
 > Create .env from .env.example and fill credentials
+
 > 🚨 For production use secrets
 
 ```
