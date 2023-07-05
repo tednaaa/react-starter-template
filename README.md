@@ -7,6 +7,7 @@ npm ci
 ```
 
 > Create .env from .env.example and fill credentials
+> 🚨 For production use secrets
 
 ```
 cp .env.example .env
@@ -18,8 +19,8 @@ cp .env.example .env
 npm start
 ```
 
-> Build your project and minify for production
+> Run your production app in background
 
 ```
-npm run build
+docker-compose up -d
 ```
