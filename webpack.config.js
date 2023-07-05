@@ -12,7 +12,7 @@ module.exports = (env, argv) => {
   const isDevelopment = argv?.mode === 'development';
 
   return {
-    entry: path.join(__dirname, 'src', 'app', 'index.tsx'),
+    entry: path.join(__dirname, 'src', 'app', 'main.tsx'),
     output: {
       filename: 'js/[name].[contenthash].js',
       path: path.join(__dirname, 'dist'),

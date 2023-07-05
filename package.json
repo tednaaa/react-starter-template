@@ -73,10 +73,13 @@
     "webpack-dev-server": "^4.15.1"
   },
   "lint-staged": {
-    "src/**/*": [
+    "*.{ts, tsx}": [
       "eslint",
       "prettier --check",
       "jest"
+    ],
+    "*.{scss, json}": [
+      "prettier --check"
     ]
   }
 }
