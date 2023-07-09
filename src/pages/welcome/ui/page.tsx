@@ -7,14 +7,12 @@ import { Users } from '@/modules/users';
 import { Counter } from './counter/counter';
 
 import styles from './styles.module.scss';
-import welcomeImage from './assets/welcome.gif';
 
 export const WelcomePage: FC = () => {
   return (
     <MainLayout title="Greetings in Main Layout! =)">
       <Container>
-        <img src={welcomeImage} alt="" />
-        <Users className={styles.users} />
+        <Users className={styles.usersWrapper} />
         <Counter />
       </Container>
     </MainLayout>

@@ -18,7 +18,7 @@ module.exports = (env, argv) => {
       path: path.join(__dirname, 'dist'),
       publicPath: '/',
     },
-    devtool: isDevelopment ? 'inline-source-map' : false,
+    devtool: isDevelopment ? 'source-map' : false,
     devServer: {
       static: {
         directory: path.join(__dirname, 'public'),
@@ -32,10 +32,6 @@ module.exports = (env, argv) => {
         chunks: 'all',
       },
       minimizer: ['...', new CssMinimizerPlugin()],
-    },
-    performance: {
-      maxEntrypointSize: 512000,
-      maxAssetSize: 512000,
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js'],
@@ -72,7 +68,7 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+          test: /\.(svg|bmp|gif|jpg|jpeg|png|avif|webp)$/,
           type: 'asset/resource',
           generator: {
             filename: 'assets/images/[hash][ext]',
