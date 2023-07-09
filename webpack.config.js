@@ -38,7 +38,7 @@ module.exports = (env, argv) => {
       maxAssetSize: 512000,
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      extensions: ['.ts', '.tsx', '.js'],
       alias: {
         '@': path.join(__dirname, './src'),
       },

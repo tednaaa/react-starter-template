@@ -2,11 +2,11 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { routes } from '@/shared/routes';
 
-import { RootPage } from './root';
+import { WelcomePage } from './welcome';
 
 export const router = createBrowserRouter([
   {
-    path: routes.ROOT,
-    element: <RootPage />,
+    path: routes.WELCOME,
+    element: <WelcomePage />,
   },
 ]);
