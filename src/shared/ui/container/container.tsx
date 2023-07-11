@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import styles from './container.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
   children?: ReactNode;

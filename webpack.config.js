@@ -12,13 +12,13 @@ module.exports = (env, argv) => {
   const isDevelopment = argv?.mode === 'development';
 
   return {
-    entry: path.join(__dirname, 'src', 'app', 'index.tsx'),
+    entry: path.join(__dirname, 'src', 'app', 'main.tsx'),
     output: {
       filename: 'js/[name].[contenthash].js',
       path: path.join(__dirname, 'dist'),
       publicPath: '/',
     },
-    devtool: isDevelopment ? 'inline-source-map' : false,
+    devtool: isDevelopment ? 'source-map' : false,
     devServer: {
       static: {
         directory: path.join(__dirname, 'public'),
@@ -33,12 +33,8 @@ module.exports = (env, argv) => {
       },
       minimizer: ['...', new CssMinimizerPlugin()],
     },
-    performance: {
-      maxEntrypointSize: 512000,
-      maxAssetSize: 512000,
-    },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      extensions: ['.ts', '.tsx', '.js'],
       alias: {
         '@': path.join(__dirname, './src'),
       },
@@ -72,7 +68,7 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+          test: /\.(svg|bmp|gif|jpg|jpeg|png|avif|webp)$/,
           type: 'asset/resource',
           generator: {
             filename: 'assets/images/[hash][ext]',

@@ -22,7 +22,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true
   },
-  "files": [],
+  "files": ["src/app/typings/index.d.ts"],
   "include": [],
   "references": [
     {
