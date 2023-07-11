@@ -19,7 +19,7 @@ describe('Container component', () => {
     render(
       <Container>
         <div>{text}</div>
-      </Container>,
+      </Container>
     );
 
     const element = screen.getByText(text);

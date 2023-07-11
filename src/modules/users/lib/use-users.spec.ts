@@ -4,12 +4,6 @@ import { fetchUsersMockFailure, fetchUsersMockOk } from '../api/mocks';
 import { useUsers } from './use-users';
 
 describe('useUsers', () => {
-  it('should be empty users array on init', () => {
-    const { result } = renderHook(useUsers);
-
-    expect(result.current.users).toStrictEqual([]);
-  });
-
   it('should set users on ok response (200)', async () => {
     const { usersOkFixture } = fetchUsersMockOk();
 

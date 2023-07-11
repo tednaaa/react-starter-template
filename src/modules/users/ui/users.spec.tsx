@@ -5,28 +5,22 @@ import { fetchUsersMockFailure, fetchUsersMockOk } from '../api/mocks';
 import { Users } from './users';
 
 describe('Users', () => {
-  it('should render headline correctly', async () => {
-    render(<Users />);
-
-    const heading = await screen.findByRole('heading', { name: 'Users' });
-
-    expect(heading).toBeInTheDocument();
-  });
-
-  it('should render list of users', async () => {
+  it('should render headline and list of users', async () => {
     const { usersOkFixture } = fetchUsersMockOk();
 
-    render(<Users />);
+    render(<Users className="" />);
 
+    const heading = await screen.findByRole('heading', { name: 'Users' });
     const users = await screen.findAllByRole('listitem');
 
     expect(users).toHaveLength(usersOkFixture.length);
+    expect(heading).toBeInTheDocument();
   });
 
   it('should handle the error', async () => {
     fetchUsersMockFailure();
 
-    render(<Users />);
+    render(<Users className="" />);
 
     const error = await screen.findByText('Error fetching users');
 
