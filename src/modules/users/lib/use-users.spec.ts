@@ -2,7 +2,6 @@ import { act, renderHook } from '@testing-library/react';
 
 import { fetchUsersMockFailure, fetchUsersMockOk } from '../api/mocks';
 import { useUsers } from './use-users';
-import { nextTick } from 'process';
 
 describe('useUsers', () => {
   it('should be empty users array on init', () => {

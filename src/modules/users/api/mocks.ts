@@ -12,7 +12,7 @@ export const fetchUsersMockOk = () => {
   server.use(
     rest.get(route, (request, response, context) => {
       return response(context.status(200), context.json(usersOkFixture));
-    })
+    }),
   );
 
   return { usersOkFixture };
@@ -24,8 +24,8 @@ export const fetchUsersMockFailure = () => {
       'https://jsonplaceholder.typicode.com/users',
       (request, response, context) => {
         return response(context.status(500));
-      }
-    )
+      },
+    ),
   );
 
   return { usersFailureFixture };

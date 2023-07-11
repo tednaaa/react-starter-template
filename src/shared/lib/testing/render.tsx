@@ -19,7 +19,7 @@ type Options = Omit<RenderOptions, 'wrapper'>;
 export const renderWithProviders = (
   ui: ReactElement,
   props?: Omit<Props, 'children'>,
-  options?: Options
+  options?: Options,
 ) =>
   render(ui, {
     wrapper: ({ children }) => (
