@@ -20,12 +20,9 @@ export const fetchUsersMockOk = () => {
 
 export const fetchUsersMockFailure = () => {
   server.use(
-    rest.get(
-      'https://jsonplaceholder.typicode.com/users',
-      (request, response, context) => {
-        return response(context.status(500));
-      }
-    )
+    rest.get(route, (request, response, context) => {
+      return response(context.status(500));
+    })
   );
 
   return { usersFailureFixture };

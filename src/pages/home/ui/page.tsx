@@ -8,9 +8,9 @@ import { Counter } from './counter/counter';
 
 import styles from './styles.module.scss';
 
-export const WelcomePage: FC = () => {
+export const HomePage: FC = () => {
   return (
-    <MainLayout title="Greetings in Main Layout! =)">
+    <MainLayout title="Greetings in Main Layout =)">
       <Container>
         <Users className={styles.usersWrapper} />
         <Counter />

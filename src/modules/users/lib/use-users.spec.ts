@@ -1,30 +1,40 @@
-import { act, renderHook } from '@testing-library/react';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { fetchUsersMockFailure, fetchUsersMockOk } from '../api/mocks';
 import { useUsers } from './use-users';
 
 describe('useUsers', () => {
-  it('should set users on ok response (200)', async () => {
+  it('should fetch and return users', async () => {
     const { usersOkFixture } = fetchUsersMockOk();
 
     const { result } = renderHook(useUsers);
 
-    await act(async () => {
-      console.log('I dont know why its working');
+    expect(result.current.users).toEqual([]);
+    expect(result.current.isLoading).toBe(true);
+    expect(result.current.error).toBe('');
+
+    await waitFor(() => {
+      expect(result.current.users).toEqual(usersOkFixture);
     });
 
-    expect(result.current.users).toStrictEqual(usersOkFixture);
+    expect(result.current.isLoading).toBe(false);
+    expect(result.current.error).toBe('');
   });
 
-  it('should set error on failure response (500)', async () => {
+  it('should handle fetching error', async () => {
     fetchUsersMockFailure();
 
     const { result } = renderHook(useUsers);
 
-    await act(async () => {
-      console.log('I dont know why its working');
+    expect(result.current.users).toEqual([]);
+    expect(result.current.isLoading).toBe(true);
+    expect(result.current.error).toBe('');
+
+    await waitFor(() => {
+      expect(result.current.error).toBe('Error fetching users');
     });
 
-    expect(result.current.error).toBe('Error fetching users');
+    expect(result.current.users).toEqual([]);
+    expect(result.current.isLoading).toBe(false);
   });
 });

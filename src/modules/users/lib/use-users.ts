@@ -5,13 +5,19 @@ import { User } from '../api/types';
 
 export const useUsers = () => {
   const [users, setUsers] = useState<User[]>([]);
-  const [error, setError] = useState('');
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    fetchUsers()
-      .then(({ data }) => setUsers(data))
-      .catch(() => setError('Error fetching users'));
+    setLoading(true);
+
+    setTimeout(() => {
+      fetchUsers()
+        .then(({ data }) => setUsers(data))
+        .catch(() => setError('Error fetching users'))
+        .finally(() => setLoading(false));
+    }, 800);
   }, []);
 
-  return { users, error };
+  return { users, isLoading, error };
 };

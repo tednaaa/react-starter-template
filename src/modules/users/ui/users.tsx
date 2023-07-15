@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { Spinner } from '@/shared/ui/spinner';
 import { useUsers } from '@/modules/users';
 
 import styles from './styles.module.scss';
@@ -10,12 +11,14 @@ interface Props {
 }
 
 export const Users: FC<Props> = ({ className }) => {
-  const { users, error } = useUsers();
+  const { users, isLoading, error } = useUsers();
 
   return (
     <div className={className}>
       <div className={styles.users}>
         <h2 className={styles.title}>Users</h2>
+
+        <Spinner isActive={isLoading} />
         {error && <p>{error}</p>}
 
         <ul>
