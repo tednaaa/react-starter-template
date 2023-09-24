@@ -9,14 +9,22 @@ export const useUsers = () => {
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
+    const abortController = new AbortController();
+
     setLoading(true);
 
     setTimeout(() => {
-      fetchUsers()
+      fetchUsers(abortController.signal)
         .then(({ data }) => setUsers(data))
-        .catch(() => setError('Error fetching users'))
+        .catch((error) => {
+          const isNotCancelled = error.name !== 'CanceledError';
+
+          if (isNotCancelled) setError('Error fetching users');
+        })
         .finally(() => setLoading(false));
     }, 800);
+
+    return () => abortController.abort();
   }, []);
 
   return { users, isLoading, error };
